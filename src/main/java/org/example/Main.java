@@ -43,9 +43,16 @@ public class Main {
             email = scanner.nextLine();
         }
 
-        System.out.println("Valid first name: " + firstName);
-        System.out.println("Valid last name: " + lastName);
-        System.out.println("Valid email: " + email);
+        String phoneRegex = "^[0-9]{1,4} [0-9]{5,15}$";
+        System.out.print("\nEnter phone number: ");
+        String phone = scanner.nextLine();
+
+        while (!phone.matches(phoneRegex)) {
+            System.out.println("Please enter a valid response.");
+            System.out.print("\nEnter phone number: ");
+            phone = scanner.nextLine();
+        }
+
 
         scanner.close();
     }
