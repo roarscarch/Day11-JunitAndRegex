@@ -19,7 +19,20 @@ public class MainTest{
             "abc.100@abc.com.au",
             "abc@1.com",
             "abc@gmail.com.com",
-            "abc+100@gmail.com"
+            "abc+100@gmail.com",
+            "abc",
+            "abc@.com.my",
+            "abc123@gmail.a",
+            "abc123@.com",
+            "abc123@.com.com",
+            ".abc@abc.com",
+            "abc()*@gmail.com",
+            "abc@%*.com",
+            "abc..2002@gmail.com",
+            "abc.@gmail.com",
+            "abc@abc@gmail.com",
+            "abc@gmail.com.1a",
+            "abc@gmail.com.aa.au"
     })
     public void testEmails(String email) {
         String emailRegex = "^[a-zA-Z0-9.$&%_+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+$";
