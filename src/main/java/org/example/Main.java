@@ -7,8 +7,8 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // ^? what is this and what is $?
-        String firstNameRegex = "^[A-Z][a-z]{2,}$";
+        // Validating first name
+        String firstNameRegex = "^[A-Z]{1,1}[a-z]{2,}$";
 
         System.out.print("Enter your first name: ");
         String firstName = scanner.nextLine();
@@ -19,18 +19,33 @@ public class Main {
             firstName = scanner.nextLine();
         }
 
-        // Valid Last Name
-        System.out.print("Enter your Last name: ");
+        // Validating last name
+        String lastNameRegex = "^[A-Z]{1,1}[a-z]{2,}$";
+
+        System.out.print("Enter your last name: ");
         String lastName = scanner.nextLine();
-        String lastNameRegex = "^[A-Z][a-z]{2,}$";
 
         while (!lastName.matches(lastNameRegex)) {
-            System.out.println("Invalid Last name. Please enter a valid last name.");
-            System.out.print("Enter your Last name: ");
+            System.out.println("Invalid last name. Please enter a valid last name.");
+            System.out.print("Enter your last name: ");
             lastName = scanner.nextLine();
         }
+
+        // Validating email
+        String emailRegex = "^[a-zA-Z0-9.$&%_+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+$";
+
+        System.out.print("Enter your email: ");
+        String email = scanner.nextLine();
+
+        while (!email.matches(emailRegex)) {
+            System.out.println("Invalid email. Please enter a valid email.");
+            System.out.print("Enter your email: ");
+            email = scanner.nextLine();
+        }
+
         System.out.println("Valid first name: " + firstName);
-        System.out.println("Valid Last name: " + lastName);
+        System.out.println("Valid last name: " + lastName);
+        System.out.println("Valid email: " + email);
 
         scanner.close();
     }
