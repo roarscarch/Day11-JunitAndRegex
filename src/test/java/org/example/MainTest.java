@@ -27,4 +27,50 @@ public class MainTest{
         Matcher matcher = pattern.matcher(email);
         assertTrue(matcher.matches());
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = { "Anu", "An", "aNu", "Anurag", "anurag" })// anu fail, Anu pass, aNu fail , anurag fail, an fail
+    public void testFirstName(String name) {
+        String nameRegex = "^[A-Z][a-zA-Z]{2,}$";
+        Pattern pattern = Pattern.compile(nameRegex);
+        Matcher matcher = pattern.matcher(name);
+        assertTrue(matcher.matches());
+    }
+    // if this passes last name will also pass
+    @ParameterizedTest
+
+    @ValueSource(strings = {
+             "Password",
+             "123@Pass",
+             "passWord",
+             "pamela ^^^^^",
+              "meow@Passs",
+            "Or456@345"
+    })
+    public void testPassword(String password) {
+        String passwordRegex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z\\d]).{8,}$";
+        Pattern pattern = Pattern.compile(passwordRegex);
+        Matcher matcher = pattern.matcher(password);
+        assertTrue(matcher.matches());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "123456",
+            "+12 345678898",
+            "91 9262509652",
+            "abcdedfcg",
+            "+91 78767676777777",
+            "+98 767367363err"
+    })
+
+
+    public void checkPhone(String phone) {
+        String phoneRegex = "^[0-9]{1,4} [0-9]{5,15}$";
+        Pattern pattern = Pattern.compile(phoneRegex);
+        Matcher matcher = pattern.matcher(phone);
+        assertTrue(matcher.matches());
+
+    }
+
 }
