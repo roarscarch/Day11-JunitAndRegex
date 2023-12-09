@@ -1,3 +1,11 @@
+/*
+Learnt about regex
+Pattern class
+Matcher class
+Pattern.compile
+Matcher.matches
+ */
+
 package org.example;
 
 import java.util.Scanner;
@@ -8,7 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Validating first name
-        String firstNameRegex = "^[A-Z]{1,1}[a-z]{2,}$";
+        String firstNameRegex = "^[A-Z]{1,1}[a-z]{2,}$";// One Captial rest small  min 3 letters
 
         System.out.print("Enter your first name: ");
         String firstName = scanner.nextLine();
@@ -31,7 +39,7 @@ public class Main {
             lastName = scanner.nextLine();
         }
 
-        // Validating email
+        // Validating email : Passes all cases
         String emailRegex = "^[a-zA-Z0-9.$&%_+-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z]{2,})+$";
 
         System.out.print("Enter your email: ");
