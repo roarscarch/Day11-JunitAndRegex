@@ -53,8 +53,9 @@ public class Main {
             phone = scanner.nextLine();
         }
 
-// Password min 8 chars
-        String passwordRegex = "^.{8,}$";
+// Password min 8 chars and Uppercase
+
+        String passwordRegex = "^(?=.*[A-Z]).{8,}$";
         System.out.print("\nEnter password: ");
         String password = scanner.nextLine();
         while (!password.matches(passwordRegex)) {
@@ -62,7 +63,6 @@ public class Main {
             System.out.print("\nEnter password: ");
             password = scanner.nextLine();
         }
-
         scanner.close();
     }
 }
