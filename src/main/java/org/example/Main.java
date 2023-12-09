@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // ^? what is this and what is $?
-        String firstNameRegex = "^[A-Z]{1,1}[a-z]{2,}$";
+        String firstNameRegex = "^[A-Z][a-z]{2,}$";
 
         System.out.print("Enter your first name: ");
         String firstName = scanner.nextLine();
@@ -19,7 +19,18 @@ public class Main {
             firstName = scanner.nextLine();
         }
 
+        // Valid Last Name
+        System.out.print("Enter your Last name: ");
+        String lastName = scanner.nextLine();
+        String lastNameRegex = "^[A-Z][a-z]{2,}$";
+
+        while (!lastName.matches(lastNameRegex)) {
+            System.out.println("Invalid Last name. Please enter a valid last name.");
+            System.out.print("Enter your Last name: ");
+            lastName = scanner.nextLine();
+        }
         System.out.println("Valid first name: " + firstName);
+        System.out.println("Valid Last name: " + lastName);
 
         scanner.close();
     }
