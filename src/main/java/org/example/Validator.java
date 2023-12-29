@@ -6,7 +6,7 @@ import org.example.Exceptions.InvalidLastNameException;
 import org.example.Exceptions.InvalidPasswordException;
 import org.example.Exceptions.InvalidPhoneNumberException;
 
-// UC12: creating validators to throw custom exceptions
+
 public class Validator {
     public static boolean validateFirstName(String firstname) throws InvalidFirstNameException {
         String firstNameRegex = "^[A-Z][a-zA-Z]{2,}$";
